@@ -2,6 +2,7 @@ import { auth0 } from "@/lib/auth0";
 import LoginButton from "@/components/LoginButton";
 import LogoutButton from "@/components/LogoutButton";
 import Profile from "@/components/Profile";
+import Test from "@/components/Test";
 
 export default async function Home() {
   const session = await auth0.getSession();
@@ -16,12 +17,13 @@ export default async function Home() {
           className="auth0-logo"
         />
         <h1 className="main-title">Next.js + Auth0</h1>
-        
+
         <div className="action-card">
           {user ? (
             <div className="logged-in-section">
               <p className="logged-in-message">✅ Successfully logged in!</p>
               <Profile />
+              <Test />
               <LogoutButton />
             </div>
           ) : (
